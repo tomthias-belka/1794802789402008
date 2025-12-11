@@ -13,9 +13,7 @@ Icon Organizer è il tuo assistente per organizzare, visualizzare ed esportare l
 
 ## Dove si trova
 
-```
-/Users/mattia/Documents/Mattia/Figma/Icon Organizer/
-```
+Il plugin si trova nella cartella `Icon Organizer/` del progetto Figma locale.
 
 ## Installazione
 

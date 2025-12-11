@@ -6,7 +6,7 @@ This guide contains git commands to copy and paste to save work on the various r
 
 ## Repository: orbitSystem
 
-**Local path**: `/Users/mattia/Documents/Mattia/Progetti/🛸 Orbit DS/orbitSystem`
+**Local path**: `<YOUR_PROJECT_PATH>/orbitSystem`
 **Remote**: `https://github.com/pluservice/orbit-design-system-tokens`
 **Active branch**: `9DecTest` (or `main` for production)
 
@@ -14,7 +14,7 @@ This guide contains git commands to copy and paste to save work on the various r
 
 ```bash
 # 1. Go to directory
-cd /Users/mattia/Documents/Mattia/Progetti/🛸 Orbit DS/orbitSystem
+cd <YOUR_PROJECT_PATH>/orbitSystem
 
 # 2. Check status
 git status
@@ -65,14 +65,14 @@ git push origin 9DecTest
 
 ## Repository: 🛸 Orbit DS (main)
 
-**Local path**: `/Users/mattia/Documents/Mattia/Progetti/🛸 Orbit DS`
+**Local path**: `<YOUR_PROJECT_PATH>`
 **Contains**: Figma Plugin, 📐 Docs, staging-tokens, etc.
 
 ### Standard workflow
 
 ```bash
 # 1. Go to directory
-cd /Users/mattia/Documents/Mattia/Progetti/🛸 Orbit DS
+cd <YOUR_PROJECT_PATH>
 
 # 2. Check status
 git status
@@ -104,22 +104,22 @@ git push
 
 ### Save everything to orbitSystem
 ```bash
-cd /Users/mattia/Documents/Mattia/Progetti/🛸 Orbit DS/orbitSystem && git add . && git commit -m "chore: update tokens" && git push origin 9DecTest
+cd <YOUR_PROJECT_PATH>/orbitSystem && git add . && git commit -m "chore: update tokens" && git push origin 9DecTest
 ```
 
 ### Save documentation
 ```bash
-cd /Users/mattia/Documents/Mattia/Progetti/🛸 Orbit DS && git add 📐 Docs/ && git commit -m "docs: update documentation" && git push
+cd <YOUR_PROJECT_PATH> && git add 📐 Docs/ && git commit -m "docs: update documentation" && git push
 ```
 
 ### Save CovenantPlugin
 ```bash
-cd /Users/mattia/Documents/Mattia/Progetti/🛸 Orbit DS && git add CovenantPlugin/ && git commit -m "feat: update plugin" && git push
+cd <YOUR_PROJECT_PATH> && git add CovenantPlugin/ && git commit -m "feat: update plugin" && git push
 ```
 
 ### Save session notes
 ```bash
-cd /Users/mattia/Documents/Mattia/Progetti/🛸 Orbit DS && git add .claude/session-notes.md && git commit -m "chore: update session notes" && git push
+cd <YOUR_PROJECT_PATH> && git add .claude/session-notes.md && git commit -m "chore: update session notes" && git push
 ```
 
 ---
@@ -128,7 +128,7 @@ cd /Users/mattia/Documents/Mattia/Progetti/🛸 Orbit DS && git add .claude/sess
 
 ### For orbitSystem
 ```bash
-cd /Users/mattia/Documents/Mattia/Progetti/🛸 Orbit DS/orbitSystem
+cd <YOUR_PROJECT_PATH>/orbitSystem
 git checkout main
 git merge 9DecTest
 git push origin main

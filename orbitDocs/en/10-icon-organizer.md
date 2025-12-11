@@ -13,9 +13,7 @@ Icon Organizer is your assistant for organizing, viewing and exporting icon libr
 
 ## Where to find it
 
-```
-/Users/mattia/Documents/Mattia/Figma/Icon Organizer/
-```
+The plugin is located in the `Icon Organizer/` folder of your local Figma project.
 
 ## Installation
 
