@@ -108,6 +108,57 @@ Questo file contiene gli stili di testo pronti all'uso. La cosa interessante? No
 }
 ```
 
+### Spiegazione di ogni proprietà
+
+| Proprietà | Tipo | Descrizione |
+|-----------|------|-------------|
+| `name` | `string` | Il percorso identificativo dello stile. Segue il pattern `categoria/stile/peso`. Esempio: `texts/body1/bold` diventa il Text Style "texts/body1/bold" in Figma. |
+| `fontFamily` | `alias` | Il nome del font come appare in Figma (es. "General Sans", "Gotham"). È un alias che punta a una variabile in orbitTokens.json. |
+| `fontSize` | `alias` | La dimensione del testo in pixel. Alias che risolve a valori come 14, 16, 18... |
+| `letterSpacing` | `string` | La spaziatura tra le lettere. Espressa in percentuale (`"0%"`, `"2%"`) o valore fisso. |
+| `lineHeight` | `alias` | L'altezza della riga in pixel. Alias che risolve a valori come 18, 24, 32... |
+| `fontFile` | `alias` | **Il nome PostScript del file font.** Questo è cruciale per gli sviluppatori. |
+
+### fontFile: perché è importante
+
+Il `fontFile` contiene il **nome PostScript** del font, cioè il nome interno usato dal sistema operativo e dai bundler CSS/JS.
+
+```json
+"fontFile": "{brand.font.fileBold}"
+```
+
+**Questo alias risolve a valori come:**
+- `"generalSans-bold"` → per Pelican
+- `"gotham-bold"` → per Comersud e MooneyGo
+- `"manrope-bold"` → per AGI
+
+**A cosa serve?**
+
+1. **CSS `@font-face`**: gli sviluppatori usano questo valore per configurare i font:
+   ```css
+   @font-face {
+     font-family: 'GeneralSans';
+     src: url('./fonts/generalSans-bold.woff2');
+     font-weight: 700;
+   }
+   ```
+
+2. **Dynamic font loading**: per caricare font a runtime:
+   ```javascript
+   const font = new FontFace('GeneralSans', `url(./fonts/${fontFile}.woff2)`);
+   ```
+
+3. **Build tools**: webpack, vite e altri bundler usano il nome PostScript per mappare i font.
+
+**Differenza tra fontFamily e fontFile:**
+
+| Campo | Esempio | Uso |
+|-------|---------|-----|
+| `fontFamily` | `"General Sans"` | Nome visuale per Figma e CSS `font-family` |
+| `fontFile` | `"generalSans-bold"` | Nome file per import/bundling |
+
+In Figma usi `fontFamily`, nel codice frontend usi `fontFile` per caricare il file corretto.
+
 **Perché usare riferimenti?**
 → Quando cambi brand, i valori si aggiornano automaticamente
 → Un solo file, tutti i brand

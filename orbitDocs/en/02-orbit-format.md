@@ -334,7 +334,67 @@ Just modify the alias in `semantic.brand.primary.main.$value.{brand}`. Everythin
 
 ---
 
-## 9. The numbers
+## 9. orbitComponents.json: the third layer
+
+Beyond `global` and `semantic`, there's a third layer: **orbitComponents.json**. This file defines UI component-specific tokens.
+
+### Why does it exist?
+
+Semantic tokens say "this is the background color of a primary button". But a component needs more: text color, border, disabled states, padding, height. `orbitComponents.json` collects all these properties in one place.
+
+### The complete hierarchy
+
+```
+┌─────────────────────────────────────────────────────────────┐
+│  1. GLOBAL (global.json)                                    │
+│     Primitive values: gray.50, teal.60, spacing.md...       │
+└─────────────────────┬───────────────────────────────────────┘
+                      │ {alias}
+                      ▼
+┌─────────────────────────────────────────────────────────────┐
+│  2. SEMANTIC (semantic-{brand}.json)                        │
+│     Meaning: button.primary.background, text.error...       │
+└─────────────────────┬───────────────────────────────────────┘
+                      │ {alias}
+                      ▼
+┌─────────────────────────────────────────────────────────────┐
+│  3. COMPONENTS (orbitComponents.json)                       │
+│     Components: UIButton.roles.primary.backgroundColor      │
+└─────────────────────────────────────────────────────────────┘
+```
+
+### Component structure
+
+```json
+{
+  "components": {
+    "UIButton": {
+      "roles": {
+        "primary": {
+          "backgroundColor": { "$value": "{semantic.definitions.button.primary.background}" },
+          "textColor": { "$value": "{semantic.definitions.button.primary.foreground}" },
+          "borderColor": { "$value": "{semantic.definitions.button.primary.border}" }
+        }
+      },
+      "variants": {
+        "default": {
+          "borderRadius": { "$value": "{semantic.brand.radius.main}" },
+          "height": { "$value": "{semantic.size.height.md}" }
+        }
+      }
+    }
+  }
+}
+```
+
+**Roles** = semantic variants (primary, secondary, tertiary)
+**Variants** = size/shape variants (default, small, large)
+
+For complete details, see the dedicated **orbitComponents** documentation.
+
+---
+
+## 10. The numbers
 
 | What | How many |
 |------|----------|

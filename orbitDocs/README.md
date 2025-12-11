@@ -16,6 +16,7 @@ ORBIT è il sistema di design token che permette di gestire colori, tipografia, 
 | Troubleshooting | Problemi comuni e soluzioni | Tutti |
 | Guida Developer | Dove trovare e modificare il codice | Developer |
 | Covenant Splitter | Documentazione covenantSplitter.js | Developer |
+| Icon Organizer | Plugin per organizzare ed esportare librerie di icone | Designer |
 | Git Push Guide | Comandi Git per salvare il lavoro | Mattia |
 
 ## In breve
@@ -70,6 +71,7 @@ ORBIT is the design token system that lets you manage colors, typography, spacin
 | Troubleshooting | Common issues and solutions | Everyone |
 | Developer Guide | Where to find and modify code | Developer |
 | Covenant Splitter | covenantSplitter.js documentation | Developer |
+| Icon Organizer | Plugin for organizing and exporting icon libraries | Designer |
 | Git Push Guide | Git commands to save work | Mattia |
 
 ## Quick summary

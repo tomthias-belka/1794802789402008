@@ -16,6 +16,7 @@ ORBIT is the design token system that lets you manage colors, typography, spacin
 | Troubleshooting | Common issues and solutions | Everyone |
 | Developer Guide | Where to find and modify code | Developer |
 | Covenant Splitter | covenantSplitter.js documentation | Developer |
+| orbitComponents | Component-level tokens for UI | Developer |
 | Git Push Guide | Git commands to save work | Mattia |
 
 ## Quick summary
